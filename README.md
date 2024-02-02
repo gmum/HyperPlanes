@@ -2,19 +2,12 @@
 
 
 <p align="center">
-    <img src=assets/nerf_exp_1.png height=200>
+    <img src=assets/nerf_exp_1.png>
 </p>
 
 
 ### Abstract: 
-*Neural radiance fields (NeRFs) provide a state-of-the-art quality for synthesizing novel views of 3D objects from a small subset of base images. However, NeRFs are currently severely limited by the lack of generalization properties. Consequently, we must devote considerable computational resources and time to train individual architectures for each 3D object we want to represent. This limitation can be tackled using generative models to produce 3D objects or rely on a few-shot approach to generate NeRF initialization. However, the latter case of implicit representation requires a few thousand iterations in during inference, while the generative models are large and complex to train. To solve these problems, we propose a hypernetwork-based few-shot training approach, which does not require gradient optimization in inference time. Hypernetwork aggregates information from training data and produces an update for universal weights. Our novel solution combines NeRFs with hypernetworks and the partially non-trainable MultiPlaneNeRF representation. As a result, we obtain an efficient method to generate a 3D object representation from an image in a single step, which is confirmed by various experimental results, including a direct comparison with the state-of-the-art and a comprehensive ablation study.*
-
-
-
-## Requirements
-- CUDA
-- Python 3.9.12
-- Dependencies stored in `environment.yml`
+*Neural radiance fields (NeRFs) are a widely accepted standard for synthesizing new 3D object views from a small number of base images. However, NeRFs have limited generalization properties, which means that we need to use significant computational resources to train individual architectures for each item we want to represent. To address this issue, we propose a few-shot training approach based on the hypernetwork paradigm that does not require gradient optimization during inference. The hypernetwork gathers information from the training data and generates an update for universal weights. As a result, we have developed an efficient method for generating a high-quality 3D object representation from a small number of images in a single step. This has been confirmed through direct comparison with the current state-of-the-art and a comprehensive ablation study.*
 
 
 # Usage
@@ -26,7 +19,7 @@ Download the datasets and put them into `data/` directory.
 - #### ShapeNet (128x128) (Original) - From original paper
 
 - #### ShapeNet (200x200) - From our dataset
-We use custom dataset adapted from Shapenet, which contains cars, chairs and planes classes. Each class has 50 images with size 200x200 and corelated pose for each render.
+We use custom dataset adapted from Shapenet, which contains cars, chairs and planes classes. Each class has 50 images of size 200x200 and a corresponding pose for each render.
 
 
 ### Installation
@@ -45,10 +38,6 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 
 ### Running
-- #### Neptune
-    ```
-    export NEPTUNE_API_TOKEN="token"
-    ```
 - #### Shapenet 128x128
     ```
     python run_hyperplanes_original.py --config configs/cars_128x128.txt
@@ -59,6 +48,16 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
     python run_hyperplanes_new.py --config configs/cars_200x200.txt
     ```
 
+### Evaluation
+- #### Shapenet 128x128
+    ```
+    python run_hyperplanes_original_eval.py --config {config path} --checkpoint {checkpoint path} --eval_pretraining_iters {iters}
+    ```
+
+- #### ShapeNet 200x200
+    ```
+    python run_hyperplanes_new_eval.py --config {config path} --checkpoint {checkpoint path} --eval_pretraining_iters {iters}
+    ```
 
 # Results
  <p align="center">
