@@ -1,0 +1,50 @@
+expname = chairs
+basedir = logs
+dataset_name = SRNCars
+dataset_dir = ../../../../shared/sets/datasets/srn_chairs/chairs
+dataset_sample = chairs
+
+i_auxilary_planes = 5
+neptune = True
+neptune_project = None
+checkpoint = None
+no_batching = True
+batch_size = 1
+use_viewdirs = True
+white_bkgd = True
+lrate_decay = 100
+
+weight_update = True
+views_update = True
+
+backbone_class=Conv4
+N_samples = 128
+N_importance = 128
+N_rand = 128
+netdepth = 8
+
+lmda_steps = 0
+hyper_penalty_steps = 0
+precrop_iters = 0
+precrop_frac = 0.5
+
+half_res = False
+render_only = False
+nerf_model = multiplane
+i_weights = 100
+i_testset = 10000
+i_epochs = 1000
+inner_step = 5
+inner_lr = 0.5
+lrate = 0.0001
+views_query = 49
+views = 1
+img2embed=1
+eval_pretraining_iters = 0
+
+planes = 0
+planes_generation = encoder
+planes_lr = 0.0001
+trainable_planes = True
+
+encoder_rate = 0.0001

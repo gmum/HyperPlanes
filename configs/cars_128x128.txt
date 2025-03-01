@@ -1,0 +1,41 @@
+expname = cars
+basedir = logs
+dataset_name = ShapeNet128x128
+dataset_dir = data/shapenet
+dataset_sample = cars
+
+neptune = False
+neptune_project = None
+checkpoint = None
+no_batching = True
+batch_size = 1
+use_viewdirs = True
+white_bkgd = True
+lrate_decay = 100
+
+weight_update = True
+views_update = True
+
+backbone_class=Conv4
+N_samples = 64
+N_importance = 128
+N_rand = 512
+netdepth = 8
+
+lmda_steps = 0
+hyper_penalty_steps = 0
+precrop_iters = 0
+precrop_frac = 0.5
+
+half_res = False
+render_only = False
+nerf_model = multiplane
+i_weights = 1
+i_testset = 1
+i_epochs = 1
+inner_step = 5
+inner_lr = 0.5
+lrate = 0.0001
+views_query = 25
+views = 25
+eval_pretraining_iters = 0

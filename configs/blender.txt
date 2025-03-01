@@ -1,0 +1,51 @@
+expname = cars
+basedir = logs
+dataset_name = blender
+dataset_dir = ../../../../shared/sets/datasets/data/nerf_synthetic/drums
+dataset_sample = cars
+
+i_auxilary_planes = 25000
+neptune = True
+neptune_project = None
+checkpoint = None
+no_batching = True
+batch_size = 1
+use_viewdirs = True
+white_bkgd = True
+lrate_decay = 100
+
+weight_update = True
+views_update = True
+
+backbone_class=Conv4
+N_samples = 256
+N_importance = 512
+N_rand = 512
+netdepth = 32
+
+lmda_steps = 0
+hyper_penalty_steps = 0
+precrop_iters = 0
+precrop_frac = 0.5
+
+half_res = False
+render_only = False
+nerf_model = multiplane
+i_weights = 10000
+i_testset = 1000000
+i_epochs = 10000
+inner_step = 5
+inner_lr = 0.5
+lrate = 0.0001
+views_query = 4
+views = 4
+img2embed=4
+
+planes = 0
+planes_generation = encoder
+planes_lr = 0.0001
+trainable_planes = True
+
+encoder_rate = 0.000001
+hn_rate = 0.000001
+eval_pretraining_iters=0

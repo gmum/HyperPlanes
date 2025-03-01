@@ -1,0 +1,7 @@
+imageio
+neptune
+numpy
+opencv-python
+scikit-image
+tqdm
+configargparse
